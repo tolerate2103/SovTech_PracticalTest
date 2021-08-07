@@ -1,27 +1,21 @@
 # SovTech_TechnicalTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+RUNNING ANGULAR APP
 
-## Development server
+Step 1 : clone the system into your local machine
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Step 2 : if you're using CLI 
 
-## Code scaffolding
+ navigate to ClientApp then right click on the folder then click on this option "copy full path"
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+   Step 3 : Open command prompt 
 
-## Build
+   run  command "cd then paste the path" press enter.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+  Step 4 :run:  npm install 
 
-## Running unit tests
+  Spep 5 :run:  npm rebuild
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  Step 6 :run:  ng serve --open
+  
+  Step 7 : Set API as startup project
