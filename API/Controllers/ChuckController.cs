@@ -26,11 +26,9 @@ namespace API.Controllers
             string json = (new WebClient()).DownloadString(httpRequest);
             var getItem = json.Split(",");
 
-
             foreach (var item in getItem)
             {
                 item.Trim(new Char[] { ' ', '[', '"', ']' });
-
                 items.Add(item);
             }
             try
@@ -43,31 +41,6 @@ namespace API.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-
-
-
-
-        [Route("LoadJoke")]
-        [HttpGet]
-        public IActionResult LoadJoke(string value)
-        {
-            var Item = "";
-            var httpRequest = "";
-
-
-            try
-            {
-                return new JsonResult(Item);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-
-        }
-
-
 
     }
 

@@ -1,3 +1,4 @@
+import { HttpParams } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { BaseComponent } from "../../framework/base/base.component";
 import { AllCriteria } from "../../framework/criteria/AllCriteria";
@@ -10,10 +11,30 @@ import { AllCriteria } from "../../framework/criteria/AllCriteria";
 export class PeopleListComponent extends BaseComponent implements OnInit {
 
   model: any;
+  value: any;
   ngOnInit() {
     this.IsLoading = true;
     this.Criteria = (<any>Object).assign(new AllCriteria(), { Page: 1, PageSize: 50 })
     this.loadData();
+  }
+
+
+  LoadItem() {
+
+    this.IsLoading = true;
+    this.dc.get('api/Search/LoadPerson', new HttpParams().set('value', this.value)).subscribe((response: any) => {
+
+      this.model = response;
+      console.log(this.model);
+      this.Criteria = this.model.Criteria;
+      this.IsLoading = false;
+    },
+      (error) => {
+        console.error(error);
+        this.somethingWentWrong();
+        this.IsLoading = false;
+      });
+
   }
 
 
@@ -32,7 +53,6 @@ export class PeopleListComponent extends BaseComponent implements OnInit {
         this.IsLoading = false;
       });
   }
-
 
 
 

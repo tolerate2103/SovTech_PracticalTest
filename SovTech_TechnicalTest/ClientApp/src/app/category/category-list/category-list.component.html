@@ -4,8 +4,20 @@
       <div class="rbox-content">
         <div class="row">
           <div class="col-10">
+          </div>
+          <div class="col-2">
+            <div class="input-group">
 
-
+              <input type="search" class="form-control form-control-sm" (keyup.enter)="LoadItem(); $event.target.select()" [(ngModel)]="value" placeholder="Search..." />
+              <div class="input-group-append">
+                <button class="btn btn-primary btn-sm" type="button" data-toggle="tooltip" title="Search" (click)="LoadItem()">
+                  <i class="fa fa-search"></i>
+                </button>
+                <button class="btn btn-reset btn-sm" type="button" data-toggle="tooltip" title="Clear search results">
+                  <i class="fa fa-times"></i>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -46,7 +58,7 @@
                       <td colspan="12" class="text-center">
                         <i class="fa fa-cog fa-spin fa-4x mt-5 mb-5 gray-forecolour"></i>
                         <br />
-                        <h3> Loading categgory , Please wait.. </h3>
+                        <h3> Loading category , Please wait.. </h3>
                       </td>
                     </tr>
                   </tbody>

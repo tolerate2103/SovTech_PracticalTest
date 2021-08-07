@@ -1,1 +1,87 @@
-<h4> People List screen is now working  </h4>
+<div class="row">
+  <div class="col-12 pl-xl-1 pr-xl-1 pb-xl-1">
+    <div class="rbox">
+      <div class="rbox-content">
+        <div class="row">
+          <div class="col-10">
+          </div>
+          <div class="col-2">
+            <div class="input-group">
+
+              <input type="search" class="form-control form-control-sm" (keyup.enter)="LoadItem(); $event.target.select()" [(ngModel)]="value" placeholder="Search..." />
+              <div class="input-group-append">
+                <button class="btn btn-primary btn-sm" type="button" data-toggle="tooltip" title="Search" (click)="LoadItem()">
+                  <i class="fa fa-search"></i>
+                </button>
+                <button class="btn btn-reset btn-sm" type="button" data-toggle="tooltip" title="Clear search results">
+                  <i class="fa fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xl-12 pl-xl-1 pr-xl-1">
+
+    <div class="rbox">
+      <div class="rbox-content">
+        <div class="row">
+          <div class="col-12">
+            <div class="table-responsive">
+              <div class="rbox-content-height-2">
+                <table class="rs-list-table">
+                  <thead>
+                    <tr class="flex-grow-1">
+                      <th> </th>
+                      <th>Person</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngIf="IsLoading == false">
+
+                    <tr *ngFor="let item of model; let i = index">
+                      <td>
+                      </td>
+                      <td>
+                        <a href="#" onclick="return false;" (click)="LoadItem(model[i])"> {{item}} </a>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                  <tbody *ngIf="IsLoading == true">
+                    <tr>
+                      <td colspan="12" class="text-center">
+                        <i class="fa fa-cog fa-spin fa-4x mt-5 mb-5 gray-forecolour"></i>
+                        <br />
+                        <h3> Loading Person , Please wait.. </h3>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tbody *ngIf="IsLoading == false && model.BookItems == 0">
+                    <tr>
+                      <td colspan="12" class="text-center border-bottom-0">
+                        <h4 class="mt-5 mb-5">
+                          <i class="fa fa-exclamation-triangle mr-2"></i>No results found
+                        </h4>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
